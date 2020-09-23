@@ -1,17 +1,113 @@
 <!DOCTYPE html>
 
 <html>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
   <head>
-    <meta charset="utf-8" />
     <meta name = "viewport" content="width=device-width, initial-scale=1" />
     <title> Eduard Isaev </title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style-projects.css">
+    <link rel="stylesheet" type="text/css" href="style-work.css">
+
+    <script src="script.js"></script>
   </head>
-  
-  <body id="Body">
-    <div id = "TopBar">
-      <header id="intro"> Welcome to my Website! </header>
+
+  <body href="javascript:void(0)" onresize="resizeWindow()">
+    <div class="topnav" id="intro">
+        <a id="logo"><img id="logoimage" src="Graphics/logo.png">EI</a>
+        <a id="WorkExperiences"> Work Experiences </a>
+        <a id="Projects"> Projects </a>
+        <a class="icon" href="javascript:void(0);" onmouseover="myFunction()"><i class="fa fa-bars"></i></a>
     </div>
+
+    <div class = "dropdown" id="Hover">
+      <a id="WorkExperiences" href="javascript:void(0)" onclick="scrollWork()"> Work Experiences </a>
+      <a id="Projects"href="javascript:void(0)" onclick="scrollProjects()"> Projects </a>
+    </div>
+    <div class="dropdown-erase" id="noHover" href="javascript:void(0)" onmouseover="secondFunction()">
+    </div>
+
+    <div id="Profile" class="Profile">
+      <div id="ProfileSelector" href="javascript:void(0)" onmouseover="shadowFunction()" onmouseout="shadowReset()"></div>
+      <div class="ProfilePhoto">
+        <img src="Graphics/EduardImage.jpg">
+      </div>
+
+      <div class="ProfileSummary">
+          <p>Welcome to my website! This is a simple portfolio of my skills
+          and attributes as well as a small project I am using to develop a few skills within my interests pertaining to the web. I am a recent <b><u><i>Electronic Engineering Graduate</u></i></b> and am looking for opportunities.</p>
+          <p style="margin-top:10px">I am interested in many areas and am very flexible to various jobs. Current areas of interest include EPC, Power & Energy, Instrumentation & Controls, Embedded Systems and Communications.</p>
+      </div>
+    </div>
+
+    <div id="Work-section" class="Work-section">
+      <div id="work-selector" href="javascript:void(0)" onmouseover="shadow2Function()" onmouseout="shadow2Reset()"></div>
+      <h1 class="heading">Work Experience</h1>
+
+      <div class="CUC">
+        <div class="headline">
+              <div id="img"><img src="https://media-exp1.licdn.com/dms/image/C560BAQGnvRtC5s4DpA/company-logo_200_200/0?e=1608768000&v=beta&t=ro2GNz-lp4oJrzF3LdMKm8k4ey3qaXZnDSJ1SEr2X-M"></div>
+              <div id="work-title"><h2>Canadian Utility Construction</h2>
+              <p>Summer Intern / Field Clerk</p></div>
+              <div id="work-date"><h2>05/2019 - 09/2019</h2>
+              <h2>05/2018 - 09/2018</h2></div>
+        </div>
+        <ul>
+          <li>Handled client-side documentation and reporting. Drawing up As-Builts to client specification and standards, filling documentation and preparing project packages for submission upon completion to the client.</li>
+          <li>Liaised between construction team and customers. Communicated with property owners, acting as first point of contact and feeding all relevant information to Foreman/Project Coordinators and customers, including scheduling work on property and property access, ensuring smooth progression of work, etc.</li>
+          <li>Executed functions of project controls and tracking, providing documentation and information to project lead(s) as necessary. Tracking daily progress, ordering/conducting locates, scheduling site equipment delivery, updating equipment logs for maintenance, setting up laydown to ensure efficient execution and meet project deadlines.</li>
+          <li>Conducted soft estimates (take-offs) for material and project schedule in accordance to client specification and project scope layout under the supervision of the area manager, assisting the bidding process.</li>
+          <li>Assisted with general project support, pre-construction site inspection, post-completion inspection and documentation, occasional labor support and other tasks as directed by the foreman or superintendent/area manager assisting smooth progression of the project.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="Projects-section" class="Projects-section">
+      <div id="project-selector" href="javascript:void(0)" onmouseover="shadow3Function()" onmouseout="shadow3Reset()"></div>
+      <h1 class="heading">Projects</h1>
+      <h2>Academic</h2>
+
+      <table>
+        <tr class="project-heading">
+          <td style="width:70%;">Power System Design</td>
+          <td>2020</td>
+        </tr>
+      </table>
+      <p>Individual project, with the objective of designing a power system to client specifications. Utilizing software (ETAP) and theoretical knowledge presented throughout the course, analyze the resulting system and design the protection/coordination of the system. Key aspects of the project included TCC analysis and coordination, stability, power security, load flow analysis, incident energy and fault analysis, mitigation strategies and various other aspects such as economic considerations of the system.
+      </p>
+
+      <table>
+        <tr class="project-heading">
+          <td style="width:70%;">Smart Grid Traffic Controller</td>
+          <td>2019</td>
+        </tr>
+      </table>
+      <p>Utilizing various sensors and an STM32 microprocessor, modelled a functioning traffic controller (intersection). Implementing various sensing technologies and utilizing various signal properties, design a system utilizing theoretical knowledge of signals and microprocessors/devices within their physical limitations. Designed and implemented signal processing algorithm for the STM32 microprocessor, bit level access (C code).
+      </p>
+
+      <table>
+        <tr class="project-heading">
+          <td style="width:70%;">AM Demodulator Receiver</td>
+          <td>2017</td>
+        </tr>
+      </table>
+      <p>In teams of two, created and implemented a design to demodulate a DSB-FC signal. Tasks included determining method of demodulation, testing and revising method to fit signal characteristics such as power band limits and DC filtering and creating an engineering style report detailing the analysis and results.
+      </p>
+
+      <table>
+        <tr class="project-heading">
+          <td style="width:70%;">Engineering the Environment</td>
+          <td>2015</td>
+        </tr>
+      </table>
+      <p>In teams of 5, tasked with collectively exploring global environmental problems arising from modern engineering, innovation and business practices. Successfully presented the importance of global biodiversity, open discussion of many solutions to engage the audience in various opportunities to save the earth’s remaining biodiversity.
+      </p>
+
+    </div>
+
   </body>
-  
+
 </html>
